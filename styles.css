@@ -3,6 +3,23 @@
     flex-wrap: wrap;
 }
 
+.navbar-brand{
+    color: #e50914 
+}
+
+.navbar-nav .nav-link.active {
+  color: #e50914 !important;
+}
+
+.navbar-nav .nav-link{
+  color: #ffdad6 !important;
+}
+
+.text-form{
+    color: #ffdad6
+}
+
+
 .card-img-top {
     width: 100%;
     height: 280px;

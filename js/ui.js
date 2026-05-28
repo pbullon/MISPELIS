@@ -40,8 +40,8 @@ function mostrarTarjetas() {
 
     if (catalogoPelisSeries.length === 0) {
         contenedor.innerHTML = `
-        <div class="col-12 text-center py-5">
-            <h3 class="text-muted">No hay películas o series en el catálogo</h3>
+        <div class="col-12 text-center text-white py-5">
+            <h3 class="">No hay películas o series en el catálogo</h3>
             <p>¡Hacé clic en "Agregar Pelicula/Serie" para empezar!</p>
         </div>
         `;
@@ -54,7 +54,7 @@ function mostrarTarjetas() {
         const col = document.createElement("div");
         col.classList.add("col");
         col.innerHTML = `
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm bg-dark text-white">
                 <img src="${rutaImagenLocal}" class="card-img-top" alt="Póster de ${item.titulo}" style="height: 320px; object-fit: cover;">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
