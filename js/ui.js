@@ -5,24 +5,14 @@ const vistaFormulario = document.getElementById("vista-formulario");
 const btnNavHome = document.getElementById("btn-nav-home");
 const btnNavAgregar = document.getElementById("btn-nav-agregar");
 
-
-let generoSeleccionado = "";
-
-if (genero.value === "accion") {
-    generoSeleccionado = "ACCION"; 
-} else if (genero.value === "cienciaficcion") {
-    generoSeleccionado = "CIENCIAFICCION";    
-} else if (genero.value === "comedia") {
-    generoSeleccionado = "COMEDIA";   
-} else if (genero.value === "drama") {
-    generoSeleccionado = "DRAMA";  
-} else if (genero.value === "romantica") {
-    generoSeleccionado = "ROMANTICA";   
-} else if (genero.value === "terror") {
-    generoSeleccionado = "TERROR";    
+const IMAGENES_POR_GENERO = {
+    "accion": "ACCION",
+    "cienciaFiccion": "CIENCIAFICCION",
+    "comedia": "COMEDIA",
+    "drama": "DRAMA",
+    "romance": "ROMANTICA", 
+    "terror": "TERROR",
 }
-
-let rutaImagenLocal = "../img/" + generoSeleccionado + ".png";
 
 function navegarA(vista) {
     if (vista === "home") {
@@ -59,7 +49,7 @@ function mostrarTarjetas() {
     }
 
     catalogoPelisSeries.forEach(item => {
-        const imagenTarjeta = item.posterURL ? item.posterURL : "https://via.placeholder.com/300x450?text=Sin+Imagen";
+        let rutaImagenLocal = "../img/" + IMAGENES_POR_GENERO[item.genero] + ".png";
 
         const col = document.createElement("div");
         col.classList.add("col");

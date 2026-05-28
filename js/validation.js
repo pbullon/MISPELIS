@@ -104,7 +104,7 @@ form.addEventListener("submit", (e) => {
             genero: genero.value,
             estado: estado.value,
             sinopsis: sinopsis.value.trim() || 'Sin sinopsis',
-            posterURL: rutaImagenLocal,
+            posterURL: posterURL.value.trim() || null,
             fecha: new Date().toISOString()
         };
 
