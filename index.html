@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Películas y Series</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mis Pelis</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="btn-nav-home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="btn-nav-agregar">Agregar Pelicula/Serie</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-3" id="vista-catalogo">
+        <div class="row justify-content-center">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="contenedorTarjetas">
+                </div>
+        </div>
+    </div>
+
+    <div class="container my-3 d-none" id="vista-formulario">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card p-4 shadow-sm">
+                    <h3 class="text-center mb-4">Agregar Película o Serie</h3>
+                    <form id="form-registro" autocomplete="off">
+                        <div class="mb-3">
+                            <label class="form-label" for="titulo">Título:</label>
+                            <input class="form-control" type="text" id="titulo" placeholder="Matrix">
+                        </div>
+                        
+                        <fieldset class="mb-3">
+                            <label class="mb-1 d-block">Tipo:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" id="tipo-peli" type="radio" name="tipo" value="pelicula">
+                                <label class="form-check-label" for="tipo-peli">Película</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" id="tipo-serie" type="radio" name="tipo" value="serie">
+                                <label class="form-check-label" for="tipo-serie">Serie</label>
+                            </div>
+                            <div class="text-danger small mt-1" id="radio-error" style="display: none;">
+                                Debes seleccionar un tipo (Película o Serie)
+                            </div>
+                        </fieldset>
+                        
+                        <div class="mb-3">
+                            <label class="form-label" for="genero">Género:</label>
+                            <select class="form-select" id="genero">
+                                <option selected disabled value="">Selecciona un género</option>
+                                <option value="accion">Acción</option>
+                                <option value="cienciaFiccion">Ciencia Ficción</option>
+                                <option value="comedia">Comedia</option>
+                                <option value="drama">Drama</option>
+                                <option value="romance">Romance</option>
+                                <option value="terror">Terror</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="estado">Estado:</label>
+                            <select class="form-select" id="estado">
+                                <option selected disabled value="">Selecciona un estado</option>
+                                <option value="vista">Vista</option>
+                                <option value="porVer">Por ver</option>
+                                <option value="viendose">Viéndose</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="posterURL">URL del póster o Imagen:</label>
+                            <input class="form-control" type="url" id="posterURL" placeholder="https://ejemplo.com/imagen.jpg">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="sinopsis" class="form-label">Sinopsis:</label>
+                            <textarea class="form-control" id="sinopsis" rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Agregar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <script src="./js/ui.js"></script>  
+    <script src="./js/validation.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
