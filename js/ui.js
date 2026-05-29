@@ -12,6 +12,7 @@ const IMAGENES_POR_GENERO = {
     "drama": "DRAMA",
     "romance": "ROMANTICA", 
     "terror": "TERROR",
+    "otro": "OTRO"
 }
 
 function navegarA(vista) {
@@ -47,9 +48,15 @@ function mostrarTarjetas() {
         `;
         return;
     }
-
+    
     catalogoPelisSeries.forEach(item => {
-        let rutaImagenLocal = "../img/" + IMAGENES_POR_GENERO[item.genero] + ".png";
+        let rutaImagenLocal = "";
+        if(item.posterURL == null){
+            rutaImagenLocal = "../img/" + IMAGENES_POR_GENERO[item.genero] + ".png";
+        }else{
+            rutaImagenLocal = item.posterURL;
+        }
+        
 
         const col = document.createElement("div");
         col.classList.add("col");
@@ -59,9 +66,9 @@ function mostrarTarjetas() {
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
                         <h5 class="card-title">${item.titulo}</h5>
-                        <p class="card-text mb-1">
-                            <span class="badge bg-secondary text-capitalize">${item.tipo}</span>
-                            <small class="text-muted text-capitalize"> - ${item.genero}</small>
+                        <p class="card-text mb-1 text-white">
+                            <span class="badge bg-secondary text-capitalize text">${item.tipo}</span>
+                            <small class=" text-capitalize "> - ${item.genero}</small>
                         </p>
                         <p class="card-text small text-truncate-3">${item.sinopsis}</p>
                     </div>

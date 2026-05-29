@@ -60,11 +60,29 @@ titulo.addEventListener('input', () => {
 tipoPeli.addEventListener("change", validarTipo);
 tipoSerie.addEventListener("change", validarTipo);
 
+genero.addEventListener("change", () => {
+    if (genero.value.trim() === "") {
+        mostrarError(genero, "Debe seleccionar un género");
+        esValido = false;
+    } else {
+        mostrarValido(genero);
+    }
+})
+
+estado.addEventListener ("change", () =>{
+    if (estado.value.trim() === "") {
+        mostrarError(estado, "Debe seleccionar un estado");
+        esValido = false;
+    } else {
+        mostrarValido(estado);
+    }
+})
+
 function validarFormularioCompleto () {
     let esValido = true;
     
-    if (titulo.value.trim().length < 2) {
-        mostrarError(titulo, "Mínimo 2 caracteres");
+    if (titulo.value.trim() === "") {
+        mostrarError(titulo, "El título está vacío");
         esValido = false;
     } else mostrarValido(titulo);
     
